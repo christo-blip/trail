@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <label>Select all</label>
+        <input type="checkbox" id="main" name="measure" onclick="checkall()">
+        <br>
+        <input type="checkbox" name="measure" value="volume">
+        <input type="checkbox" name="measure" value="area">
+        <input type="checkbox"  name="measure" value="diameter">
+</div>
+    <button onclick="addchk()">Add check</button>
+<!---------------------------ADD Checck box----------------------------------------->
+    <div>
+<h1>add Chech box</h1>
+    <p id="box"></p>
+    <input type="button" value="Add check box"id="clk">
+</div>
+
+<script>
+    var a=document.getElementById('main')
+var b=document.getElementsByName('measure')
+
+function checkall(){ 
+
+    for (let i=0;i<b.length;i++){
+        b[i].checked=a.checked;
+    }
+}
+
+    // if(a.checked==true){
+//       for (let i=0;i<b.length;i++){
+//             b[i].checked=true;
+//         }
+
+//     }else{
+//         for (let i=0;i<b.length;i++){
+//             b[i].checked=false;
+        
+//     }
+// }
+
+function addchk(){
+
+    document.getElementById('add').innerHTML+='<input type=checkbox>';
+}
+
+document.getElementById('clk').addEventListener('click',function(){
+    document.getElementById('box').innerHTML+='<input type="checkbox">'
+});
+</script>
+</body>
+</html>
